@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>mydrip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button id="menuToggle">☰</button>
+    <h1>mydrip</h1>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+      <button id="loginBtn">Admin</button>
+      <button id="logoutBtn" style="display:none;">Logout</button>
+      <button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
 
+  <nav id="sidebar">
+    <ul>
+      <li data-cat="all" class="active">All</li>
+      <li data-cat="schuhe">Schuhe</li>
+      <li data-cat="hosen">Hosen</li>
+      <li data-cat="pullover">Pullover</li>
+      <li data-cat="tshirts">T-Shirts</li>
+    </ul>
+  </nav>
+
+  <main id="productContainer"></main>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <button id="addToCartBtn">Add to Cart</button>
+      <button id="deleteProductBtn" style="display:none;">Delete Product</button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Admin Login</h2>
+      <input id="adminUser" placeholder="Username">
+      <input id="adminPass" placeholder="Password" type="password">
+      <button id="adminSubmit">Login</button>
+      <p id="loginError" style="color:red;"></p>
+    </div>
+  </div>
+
+  <!-- Add Product Panel -->
+  <div id="adminPanel" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Product</h2>
+      <input id="newName" placeholder="Name">
+      <input id="newDesc" placeholder="Description">
+      <input id="newImg" placeholder="Image URL">
+      <select id="newCat">
+        <option value="schuhe">Schuhe</option>
+        <option value="hosen">Hosen</option>
+        <option value="pullover">Pullover</option>
+        <option value="tshirts">T-Shirts</option>
+      </select>
+      <button id="addProductBtn">Add Product</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
